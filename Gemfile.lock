@@ -32,10 +32,14 @@ GEM
     http (0.6.1)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     json (1.8.1)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     naught (1.0.0)
     rack (1.5.2)
@@ -90,4 +94,6 @@ PLATFORMS
 DEPENDENCIES
   dashing
   dotenv
+  httparty
+  json
   twitter (>= 5.9.0)
