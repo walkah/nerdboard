@@ -20,6 +20,13 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
 
   options = {:oauth_token => "#{ACCESS_TOKEN}", :v => "20130714"}
 
+  response = HTTParty.get("#{BASE_URL}", :query => options)
+  if response.code === 200
+    result = JSON.parse(response.body)['response']['venue']
+
+    checkins = result['stats']['checkinsCount']
+  end
+
   # Get users here now
   response = HTTParty.get("#{BASE_URL}herenow", :query => options)
 
@@ -29,15 +36,7 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
     herenow = result['count']
     users = result['items'];
     total_users = users.size
-  end
 
-  # Get venue stats
-  response = HTTParty.get("#{BASE_URL}stats", :query => options)
-
-  if response.code === 200
-    result = JSON.parse(response.body)['response']
-
-    checkins = result['stats']['totalCheckins']
   end
 end
 
@@ -53,7 +52,7 @@ SCHEDULER.every '5s', :first_in => '5s' do |job|
       user_index = (user_index + 1)%total_users
 
       name = users[user_index]['user']['firstName']
-      picture = users[user_index]['user']['photo']['prefix'] + "300x300" + users[user_index]['user']['photo']['suffix']
+      picture = users[user_index]['user']['photo']['prefix'] + "150x150" + users[user_index]['user']['photo']['suffix']
       send_event('foursquare', title: "#{name} is here", value: '', photo: picture)
     end
   end
