@@ -1,5 +1,7 @@
 <script type='text/javascript'>
 $(function() {
+  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":5,"row":3,"size_x":1,"size_y":1}]')
+
   Dashing.widget_base_dimensions = [370, 340]
   Dashing.numColumns = 5
 });
@@ -13,21 +15,40 @@ $(function() {
       <div data-id="welcome" data-view="Text" data-title="welcome" data-text="to the nerdhaus" data-moreinfo="http://nerdhaus.ca/"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="icon-time icon-background"></i>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="nest" data-view="Nest" data-title="inside"></div>
+    </li>  
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="forecast" data-view="Forecast" data-title="outside"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="rdio" data-view="Rdio"></div>
+      <i class="icon-music icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets tagged with #nerdhaus"></div>
+      <i class="icon-twitter icon-background"></i>
+    </li>
+
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+      <div data-id="instagram" data-view="Instagram"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="foursquare" data-view="Foursquare"></div>
+      <i class="icon-foursquare icon-background"></i>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="rdio" data-view="Rdio"></div>
+      <div data-id="extrudel" data-view="Image"></div>
     </li>
 
   </ul>
