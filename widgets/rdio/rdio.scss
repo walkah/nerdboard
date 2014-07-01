@@ -3,5 +3,12 @@ $value-color:       #fff;
 
 .widget-rdio {
     background-color: $background-color;
-  
+
+    img {
+        float: left;
+    }
+
+    .track, .artist {
+        color: $value-color;
+    }
 }
