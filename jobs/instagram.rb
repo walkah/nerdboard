@@ -5,16 +5,15 @@ Instagram.configure do |config|
   config.client_id = ENV['INSTAGRAM_CLIENT_ID']
 end
 
-# Latitude, Longitude for location
-instadash_location_lat = ENV['LOCATION_LAT']
-instadash_location_long = ENV['LOCATION_LON']
+# Instagram location ID
+instagram_location_id = ENV['INSTAGRAM_LOCATION_ID']
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
-  photos = Instagram.media_search(instadash_location_lat,instadash_location_long)
+  photos = Instagram.location_recent_media(instagram_location_id)
   if photos
     photos.map! do |photo|
       { photo: "#{photo.images.standard_resolution.url}" }
-    end    
+    end
   end
   send_event('instagram', photos: photos)
 end
