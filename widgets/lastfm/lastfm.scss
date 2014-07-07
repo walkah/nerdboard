@@ -1,0 +1,29 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #9c4274;
+$value-color:       #fff;
+
+$title-color:       rgba(255, 255, 255, 0.7);;
+$moreinfo-color:    rgba(255, 255, 255, 0.7);;
+
+// ----------------------------------------------------------------------------
+// Widget-weather styles
+// ----------------------------------------------------------------------------
+
+.widget-lastfm { 
+
+  background-color: $background-color;
+
+  img {
+      float: left;
+  }
+  
+  .title { 
+    color: $title-color;
+  }
+
+  .artist, .name {
+    color: $value-color;
+  }
+}
